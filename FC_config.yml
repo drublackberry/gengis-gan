@@ -1,0 +1,8 @@
+type: "CNN"
+layers:
+    dense:
+        type: "FC"
+        specs:  # parameters of tf.layers.dense
+            units: 113
+            activation: None
+learning_rate: 0.001

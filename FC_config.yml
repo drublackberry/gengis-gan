@@ -1,6 +1,11 @@
-type: "CNN"
+type: "FC"
 layers:
-    dense:
+    layer_1:
+        type: "FC"
+        specs:  # parameters of tf.layers.dense
+            units: 1024
+            activation: None
+    layer_2:
         type: "FC"
         specs:  # parameters of tf.layers.dense
             units: 113

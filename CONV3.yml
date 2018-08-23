@@ -1,9 +1,10 @@
+# complex architecture with 3 conv laters, FC 2046 and learn rate 1e-5
 type: "CNN"
 layers:
     conv1:
         type: "CONV"
         specs:  # parameters of tf.layers.conv2d
-            kernel_size: [5, 5]
+            kernel_size: [20, 20]
             filters: 32
             padding: "same"
             activation: 'relu'
@@ -15,7 +16,7 @@ layers:
     conv2:
         type: "CONV"
         specs:  # parameters of tf.layers.conv2d
-            kernel_size: [5, 5]
+            kernel_size: [10, 10]
             filters: 64
             padding: "same"
             activation: 'relu'
@@ -24,19 +25,31 @@ layers:
         specs:  # parameters of tf.layers.max_pooling2d
             pool_size: [2,2]
             strides: 2
+    conv3:
+        type: "CONV"
+        specs:  # parameters of tf.layers.conv2d
+            kernel_size: [5, 5]
+            filters: 64
+            padding: "same"
+            activation: 'relu'
+    pool3:        
+        type: "POOL"
+        specs:  # parameters of tf.layers.max_pooling2d
+            pool_size: [2,2]
+            strides: 2            
     dense:       
         type: "FC"
         specs:  # parameters of tf.layers.dense
-            units: 1024
+            units: 2046
             activation: 'relu'
     drop:        
         type: "DROP"
         specs:  # tf.layers.dropout
-            rate: 0.4
+            rate: 0.2
             on_train: True
     logits:
         type: "FC"
         specs:  # parameters of tf.layers.dense
             units: 113
             activation: None
-learning_rate: 0.001
+learning_rate: 0.00001

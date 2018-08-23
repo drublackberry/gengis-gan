@@ -12,18 +12,6 @@ layers:
         specs:  # parameters of tf.layers.max_pooling2d
             pool_size: [2,2]
             strides: 2
-    conv2:
-        type: "CONV"
-        specs:  # parameters of tf.layers.conv2d
-            kernel_size: [5, 5]
-            filters: 64
-            padding: "same"
-            activation: 'relu'
-    pool2:        
-        type: "POOL"
-        specs:  # parameters of tf.layers.max_pooling2d
-            pool_size: [2,2]
-            strides: 2
     dense:       
         type: "FC"
         specs:  # parameters of tf.layers.dense
@@ -39,4 +27,4 @@ layers:
         specs:  # parameters of tf.layers.dense
             units: 113
             activation: None
-learning_rate: 0.001
+learning_rate: 0.0001

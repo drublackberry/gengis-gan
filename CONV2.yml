@@ -37,6 +37,6 @@ layers:
     logits:
         type: "FC"
         specs:  # parameters of tf.layers.dense
-            units: 113
+            units: 22600
             activation: None
-learning_rate: 0.001
+learning_rate: 0.0001
